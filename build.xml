@@ -66,7 +66,7 @@
 </target>
 
 <target name="test" depends="prepare-for-testing, compile-the-tests" description="run the unit tests" >
-  <junit printsummary="false" haltonfailure="true" >
+  <junit printsummary="false" haltonfailure="false" >
     <classpath refid="test.compile.classpath"/>
     <formatter type="brief" usefile="false" />
     <batchtest todir="${test.report.dir}">
