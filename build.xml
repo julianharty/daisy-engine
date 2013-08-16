@@ -42,7 +42,7 @@
   <mkdir dir="/sdcard/" />
   <mkdir dir="${test.daisy.files}" />
   <copy todir="${test.daisy.files}">
-    <fileset dir="../files-used-for-testing" />
+    <fileset dir="./files-used-for-testing" />
   </copy> 
 </target>
 
@@ -89,7 +89,7 @@
   </jar>
 </target>
 
-<target name="build-and-test" depends="test, jar, sources-jar" >
+<target name="build-and-test" depends="test, jar, sources-jar" description="runs the tests and builds the jars if they pass." >
   
 </target>
 <target name="clean" description="clean up temporary files." >
