@@ -25,6 +25,11 @@ public class ParserUtilities {
 				return attributes.getValue(i);
 			}
 		}
+
+		System.out.println("+=+ XML Diagnostics: No match found for: " + nameToMatch);
+		for (int i = 0; i < attributes.getLength(); i++) {
+			System.out.println(String.format("[%d]=[%s]", i, attributes.getValue(i)));
+		}
 		return null;
 	}
 }
