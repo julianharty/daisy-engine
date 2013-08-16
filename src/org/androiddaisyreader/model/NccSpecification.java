@@ -341,14 +341,14 @@ public class NccSpecification extends DefaultHandler {
 
 	public static Daisy202Book readFromFile(File file) throws IOException {
 		InputStream contents = new BufferedInputStream(new FileInputStream(file));
-		String encoding = obtainEncodingStringFromInputStream(contents);
-		encoding = mapUnsupportedEncoding(encoding);
-		return readFromStream(contents, encoding);
+		return readFromStream(contents);
 	}
 
 	public static Daisy202Book readFromStream(InputStream contents) throws IOException {
 		String encoding = obtainEncodingStringFromInputStream(contents);
+		System.out.println("+=+ Diagnostics: Encoding obtained from content = " + encoding);
 		encoding = mapUnsupportedEncoding(encoding);
+		System.out.println("+=+ Diagnostics: Mapped encoding = " + encoding);
 		return readFromStream(contents, encoding);
 
 	}
