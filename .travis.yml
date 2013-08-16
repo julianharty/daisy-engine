@@ -1,0 +1,7 @@
+language: java
+before_install:
+  - sudo apt-get update -qq
+before_script:
+  - pwd
+script: "./buildstuff.sh"
+
