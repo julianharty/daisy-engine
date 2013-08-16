@@ -22,14 +22,18 @@ public class ParserUtilities {
 			// comment above. We need to test this on Android soon.
 			String name = attributes.getLocalName(i);
 			String qName = attributes.getQName(i);
-			if (name.equalsIgnoreCase(nameToMatch) || qName.equalsIgnoreCase(nameToMatch)) {
+			if (name.equalsIgnoreCase(nameToMatch)) {
+				return attributes.getValue(i);
+			}
+  
+			if (qName.equalsIgnoreCase(nameToMatch)) {
 				return attributes.getValue(i);
 			}
 		}
 
 		System.out.println("+=+ XML Diagnostics: No match found for: " + nameToMatch);
 		for (int i = 0; i < attributes.getLength(); i++) {
-			System.out.println(String.format("[%s:%s]=[%s]", 
+			System.out.println(String.format("getLocalName[%s], getQName[%s], getValue[%s]", 
 				attributes.getLocalName(i), attributes.getQName(i), attributes.getValue(i)));
 		}
 		return null;
