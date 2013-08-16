@@ -270,6 +270,11 @@ public class NccSpecification extends DefaultHandler {
 
 		for (int i = 0; i < attributes.getLength(); i++) {
 			String name = attributes.getLocalName(i);
+			if (name.length() == 0) {
+				name = attributes.getQName(i);
+				System.out.println("+=*=+ Diagnostics: getLocalName is empty, getQName = " + name);
+			}
+
 			if (name.equalsIgnoreCase("name") || name.equalsIgnoreCase("Content-type")) {
 				metaName = attributes.getValue(i);
 			}
