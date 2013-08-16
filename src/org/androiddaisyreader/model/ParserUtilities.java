@@ -21,7 +21,7 @@ public class ParserUtilities {
 			// TODO 20120512 (jharty): this code may fail on Android, see my
 			// comment above. We need to test this on Android soon.
 			String name = attributes.getLocalName(i);
-			String qName = attributes.getLocalName(i);
+			String qName = attributes.getQName(i);
 			if (name.equalsIgnoreCase(nameToMatch) || qName.equalsIgnoreCase(nameToMatch)) {
 				return attributes.getValue(i);
 			}
