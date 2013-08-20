@@ -49,9 +49,6 @@ public class NccSpecificationTest extends TestCase {
 	
 	public void testUsingValidSampleContent() throws IOException {
 		ByteArrayInputStream content = new ByteArrayInputStream((SampleContent.simpleValidNccHtml).getBytes());
-		System.out.println("+=+ Diagnostics for travis-ci +=+");
-		System.out.println("SampleContent.simpleValidNccHtml).length() = " 
-				+ (SampleContent.simpleValidNccHtml).length());
 		Daisy202Book anotherThingy = NccSpecification.readFromStream(content, "utf-8");
 		assertEquals(SampleContent.firstTitle, anotherThingy.getTitle());
 		assertEquals(1, anotherThingy.sections.size());
